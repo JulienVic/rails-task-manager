@@ -1,0 +1,15 @@
+<form>
+  <%= form_for(@task) do |f| %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1"><%= f.label :title %></label>
+      <div class="form-control">
+      <%= f.text_field :title %>
+      </div>
+    </div>
+   <div class="btn btn-primary"><%= f.submit :class => "btn"%></div>
+  <% end %>
+</form>
+

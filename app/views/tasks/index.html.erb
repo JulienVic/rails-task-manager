@@ -1,0 +1,19 @@
+<h1>My tasks</h1>
+
+<div class="input-group mb-3">
+      <% @tasks.each do |task| %>
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="checkbox" aria-label="Checkbox for following text input">
+        </div>
+        <div class="form-control">
+          <%= link_to task.title, task_path(task) %> <%= link_to "Delete #{task.title}",
+                  task_path(task),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+      <% end %>
+</div>
+
+<h3><%= link_to 'Add a new task', new_path %></h3>
